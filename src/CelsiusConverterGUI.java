@@ -31,8 +31,8 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Celsius Converter");
@@ -56,9 +56,14 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
 
         jLabel4.setText("Result: ");
 
-        jLabel5.setText("Formula");
-
         jLabel6.setText("1.8(Celsius) + 32 = Fahrenheit");
+
+        jToggleButton1.setText("Formula");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,7 +72,7 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
+                    .addComponent(jToggleButton1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -82,13 +87,13 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jLabel6))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
+                .addGap(15, 15, 15)
+                .addComponent(jToggleButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -103,7 +108,7 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
@@ -118,6 +123,18 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
         int tempFahr = (int)((Double.parseDouble(jTextField1.getText())) * 1.8 + 32);
         jLabel4.setText("Result: " + tempFahr + " Fahrenheit");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+        jLabel6.setVisible(false);
+        if(jToggleButton1.isSelected()){
+            jLabel6.setVisible(false);
+        } else{
+            jLabel6.setVisible(true);
+        }
+        
+        
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,8 +177,8 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
